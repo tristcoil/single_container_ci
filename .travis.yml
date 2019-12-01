@@ -1,11 +1,12 @@
 sudo: required
 services:
   - docker
-env:
-  global:
-    - REGISTRY_USER=myrobot
-    # REGISTRY_PASS=...
-    - secret: "<something long>"
+
+#env:
+#  global:
+#    - REGISTRY_USER=myrobot
+#    # REGISTRY_PASS=...
+#    - secret: "<something long>"
 
 script:
   - docker build --tag myorg/myimage .
@@ -18,6 +19,6 @@ before_deploy:
   - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
 deploy:
   provider: script
-  script: docker push myorg/myimage
+  script: docker push coil/single_container_ci
   on:
     branch: master
