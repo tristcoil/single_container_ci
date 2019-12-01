@@ -9,8 +9,8 @@ services:
 #    - secret: "<something long>"
 
 script:
-  - docker build --tag myorg/myimage .
-  - docker run myorg/myimage
+  - docker build --tag coil/single_container_ci .
+  - docker run coil/single_container_ci
 
 after_script:
   - docker images
