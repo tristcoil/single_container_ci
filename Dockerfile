@@ -8,4 +8,4 @@ RUN apt-get update \
 ENV PATH "$PATH:/usr/games"
 
 ENTRYPOINT ["cowsay"]
-CMD ["Hello, World!"]
+CMD ["Hello, World! new commit"]
